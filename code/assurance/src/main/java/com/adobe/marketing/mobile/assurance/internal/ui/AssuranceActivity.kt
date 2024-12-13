@@ -27,7 +27,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.navigation.compose.rememberNavController
 import com.adobe.marketing.mobile.assurance.internal.AssuranceComponentRegistry
 import com.adobe.marketing.mobile.assurance.internal.ui.theme.AssuranceTheme.backgroundColor
-
+import android.content.pm.PackageManager
 /**
  * Activity that hosts all of the Assurance UI.
  */
@@ -52,14 +52,27 @@ class AssuranceActivity : ComponentActivity() {
                                 .fillMaxSize()
                         ) {
 
-                            // Locks the Assurance screen to always be in portrait mode.
-                            val orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-                            DisposableEffect(orientation) {
-                                val originalOrientation = requestedOrientation
-                                requestedOrientation = orientation
-                                onDispose {
-                                    // restore original orientation when view disappears
-                                    requestedOrientation = originalOrientation
+//                            // Locks the Assurance screen to always be in portrait mode.
+//                            val orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+//                            DisposableEffect(orientation) {
+//                                val originalOrientation = requestedOrientation
+//                                requestedOrientation = orientation
+//                                onDispose {
+//                                    // restore original orientation when view disappears
+//                                    requestedOrientation = originalOrientation
+//                                }
+//                            }
+
+                            val isAndroidTV = packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
+                            if (!isAndroidTV) {
+                                val orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                                DisposableEffect(orientation) {
+                                    val originalOrientation = requestedOrientation
+                                    requestedOrientation = orientation
+                                    onDispose {
+                                        // restore original orientation when view disappears
+                                        requestedOrientation = originalOrientation
+                                    }
                                 }
                             }
 

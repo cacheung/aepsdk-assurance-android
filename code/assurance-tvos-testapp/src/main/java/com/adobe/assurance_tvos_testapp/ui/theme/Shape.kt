@@ -1,5 +1,5 @@
-/**
- * Copyright 2024 Adobe. All rights reserved.
+/*
+ * Copyright 2023 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -9,17 +9,14 @@
  * governing permissions and limitations under the License.
  */
 
-buildscript {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
-        mavenLocal()
-        maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
-    }
-    dependencies {
-        classpath("com.github.adobe:aepsdk-commons:gp-3.0.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20")
-    }
-}
+package com.adobe.marketing.mobile.assurance.testapp.ui.theme
+
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Shapes
+import androidx.compose.ui.unit.dp
+
+val Shapes = Shapes(
+    small = RoundedCornerShape(4.dp),
+    medium = RoundedCornerShape(4.dp),
+    large = RoundedCornerShape(0.dp)
+)
