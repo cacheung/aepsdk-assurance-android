@@ -65,13 +65,13 @@ internal fun AssuranceScreen(
                 AssuranceVersionLabel(version = Assurance.extensionVersion())
             }
 
-            Row(
-                modifier = Modifier
-                    .padding(vertical = 16.dp, horizontal = 8.dp)
-                    .align(Alignment.CenterHorizontally)
-            ) {
-                AppIdConfiguration()
-            }
+//            Row(
+//                modifier = Modifier
+//                    .padding(vertical = 16.dp, horizontal = 8.dp)
+//                    .align(Alignment.CenterHorizontally)
+//            ) {
+//                AppIdConfiguration()
+//            }
 
             Row(
                 modifier = Modifier

@@ -36,4 +36,4 @@ include (
     ":assurance-testapp"
 )
 
-include(":assurance-tvos-testapp")
+include(":assurance-tv-testapp")

@@ -79,8 +79,6 @@ import kotlinx.coroutines.launch
 
 
 private lateinit var contentCardUIProvider: ContentCardUIProvider
-private lateinit var contentCardViewModel: AepContentCardViewModel
-//private lateinit var contentCardCallback: ContentCardCallback
 
 @Composable
 internal fun MessagingScreen() {
@@ -89,7 +87,7 @@ internal fun MessagingScreen() {
     Spacer(modifier = Modifier.height(8.dp))
 
     Column(modifier = Modifier.testTag(AssuranceTestAppConstants.TEST_TAG_MESSAGING_SCREEN)) {
-        Row() {
+        Row(modifier = Modifier.padding(64.dp)) {
             ContentCardSection()
         }
     }
@@ -98,14 +96,9 @@ internal fun MessagingScreen() {
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
 private fun ContentCardSection() {
-    //val _aepUIList = MutableStateFlow<List<AepUI<*, *>>>(emptyList())
-    //val aepUIList: StateFlow<List<AepUI<*, *>>> = _aepUIList.asStateFlow()
-
 
     val aepUIListLiveData = MutableLiveData<List<AepUI<*, *>>>()
     val aepUIList by aepUIListLiveData.observeAsState(emptyList())
-
-
 
 
     // Channel name androidTV: GW Android TV Content Card
@@ -118,15 +111,13 @@ private fun ContentCardSection() {
 
 
     Messaging.updatePropositionsForSurfaces(surfaces)
-    //contentCardViewModel.refreshContent()
-
 
 
     coroutineScope.launch {
         contentCardUIProvider.getContentCardUI().collect { aepUiResult ->
             aepUiResult.onSuccess { aepUi ->
                 aepUIListLiveData.value = aepUi
-            //_aepUIList.value = aepUi
+
             }
             aepUiResult.onFailure { throwable ->
                 Log.d("ContentCardUIProvider", "Error fetching AepUI list: ${throwable}")
@@ -146,12 +137,8 @@ private fun ContentCardSection() {
                     )
                 }
             }
-
-        // Use aepUI to get content card composables to display
         }
     }
-
-
 }
 
 
@@ -174,30 +161,6 @@ class AepContentCardViewModel(private val contentCardUIProvider: ContentCardUIPr
                     Log.d("ContentCardUIProvider", "Error fetching AepUI list: ${throwable}")
                 }
             }
-        }
-    }
-
-    // Function to refresh the aepUIList from the ContentCardUIProvider
-    fun refreshContent() {
-        viewModelScope.launch {
-            contentCardUIProvider.refreshContent()
-        }
-    }
-}
-
-
-class AepContentCardViewModelFactory(
-    private val contentCardUIProvider: ContentCardUIProvider
-) : ViewModelProvider.Factory {
-
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return when {
-            modelClass.isAssignableFrom(AepContentCardViewModel::class.java) -> {
-                AepContentCardViewModel(contentCardUIProvider) as T
-            }
-
-            else -> throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
 }
