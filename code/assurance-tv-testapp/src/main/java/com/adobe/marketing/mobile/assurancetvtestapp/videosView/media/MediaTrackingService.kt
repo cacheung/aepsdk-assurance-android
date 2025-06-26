@@ -52,7 +52,7 @@ class MediaTrackingService {
             
             // Create media tracker configuration for Edge Network
             val config = mapOf(
-                "config.channel" to "Assurance TV Test App",
+                "config.channel" to "Assurance TV leanback Test App",
                 "config.downloadedcontent" to false,
                 "config.appVersion" to "1.0.0"
             )

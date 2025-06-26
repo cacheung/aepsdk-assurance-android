@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Assurance Leanback Test</string>
+    <string name="search_hint">Search videos…</string>
+    <string name="browse_title">Assurance Leanback Test App</string>
+    <string name="error_message">An error occurred</string>
+    <string name="retry">Retry</string>
+</resources> 

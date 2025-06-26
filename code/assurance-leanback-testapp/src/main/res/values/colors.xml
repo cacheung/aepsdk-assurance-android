@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern TV App Color Palette -->
+    <!-- Primary brand colors - Adobe-inspired with modern touches -->
+    <color name="primary">#1A237E</color>
+    <color name="primary_dark">#0D1B5C</color>
+    <color name="primary_light">#3F51B5</color>
+    <color name="accent">#00D4AA</color>
+    <color name="accent_dark">#00B894</color>
+    
+    <!-- Background colors - Dark theme optimized for TV -->
+    <color name="background_dark">#0A0A0A</color>
+    <color name="background_medium">#1A1A1A</color>
+    <color name="background_light">#2A2A2A</color>
+    <color name="background_card">#1E1E1E</color>
+    
+    <!-- Text colors - High contrast for TV viewing -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#E0E0E0</color>
+    <color name="text_hint">#B0B0B0</color>
+    <color name="text_muted">#808080</color>
+    
+    <!-- Card colors - Enhanced for better focus states -->
+    <color name="card_background">#1E1E1E</color>
+    <color name="card_selected">#1A237E</color>
+    <color name="card_focused">#00D4AA</color>
+    <color name="card_hover">#2A2A2A</color>
+    
+    <!-- Gradient colors for modern card backgrounds -->
+    <color name="gradient_start_blue">#3F51B5</color>
+    <color name="gradient_end_blue">#1A237E</color>
+    <color name="gradient_start_green">#00D4AA</color>
+    <color name="gradient_end_green">#00B894</color>
+    <color name="gradient_start_purple">#8B5CF6</color>
+    <color name="gradient_end_purple">#7C3AED</color>
+    <color name="gradient_start_orange">#FF9800</color>
+    <color name="gradient_end_orange">#F57C00</color>
+    
+    <!-- Legacy colors for compatibility -->
+    <color name="search_opaque">#00D4AA</color>
+    <color name="selected_background">#1A237E</color>
+    <color name="default_background">#0A0A0A</color>
+    
+    <!-- Leanback specific colors -->
+    <color name="lb_basic_card_title_text_color">#FFFFFF</color>
+    <color name="lb_basic_card_content_text_color">#E0E0E0</color>
+    
+    <!-- Focus and selection indicators -->
+    <color name="focus_border">#00D4AA</color>
+    <color name="selection_glow">#1A237E</color>
+</resources> 

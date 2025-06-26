@@ -34,6 +34,7 @@ rootProject.name = "aepsdk-assurance-android"
 include (
     ":assurance",
     ":assurance-testapp",
-    ":assurance-tv-testapp"
+    ":assurance-tv-testapp",
+    ":assurance-leanback-testapp"
 )
 
